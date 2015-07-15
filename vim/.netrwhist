@@ -1,10 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/Users/Gustavo/Documents/workspace/realtimeanalysis/.git'
-let g:netrw_dirhist_2='/Users/Gustavo/Documents/Programming/scheduler/src'
-let g:netrw_dirhist_3='/Users/Gustavo/Documents/Programming/scheduler/src/main'
-let g:netrw_dirhist_4='/Users/Gustavo/Documents/Programming/scheduler/src/main/java'
-let g:netrw_dirhist_5='/Users/Gustavo/Documents/Programming/scheduler/src/main'
-let g:netrw_dirhist_6='/Users/Gustavo/Documents/Programming/scheduler/src'
-let g:netrw_dirhist_7='/Users/Gustavo/Documents/Programming/scheduler/src/main'
-let g:netrw_dirhist_8='/Users/Gustavo/Documents/Programming/scheduler/src/main/scala'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/Users/Gustavo/.vim'

@@ -1,0 +1,15 @@
+# Curly brace style
+--style=java
+# indentation
+--indent=spaces=4
+# switch
+--indent-cases
+# pad operators
+--pad-oper
+# pad if/else/etc
+--pad-header
+--delete-empty-lines
+# NO IF WITHOUT BRACKETS
+--add-brackets
+--convert-tabs
+--max-code-length=80

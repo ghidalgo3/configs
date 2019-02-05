@@ -1,4 +1,22 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+" Literally control P
+Plugin 'kien/ctrlp.vim'
+" Visual File Explorer, bind to <Space>-t
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+let g:NERDTreeNodeDelimiter = "\u00a0"
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+call vundle#end()            " required
+filetype plugin indent on    " required
 syntax on
+set nowrap
+set relativenumber
 set shiftwidth=4
 set softtabstop=4
 set smartindent
@@ -35,12 +53,6 @@ nnoremap <Leader>q :q<cr>
 nnoremap <Leader>t :NERDTreeToggle<cr>
 nnoremap <Leader>ma :! make<cr>
 au BufReadPost *.pde set syntax=cpp
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-execute pathogen#infect()
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 " Strange backspace behavior...
 set backspace=indent,eol,start
 let g:airline#extensions#tabline#buffer_min_count = 1
@@ -48,3 +60,4 @@ nnoremap j gj
 nnoremap k gk
 "wow much colors in lisp wow
 let g:lisp_rainbow=1
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

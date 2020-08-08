@@ -4,9 +4,7 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-" Literally control P
 Plugin 'kien/ctrlp.vim'
-" Visual File Explorer, bind to <Space>-t
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 let g:NERDTreeNodeDelimiter = "\u00a0"
@@ -58,6 +56,3 @@ set backspace=indent,eol,start
 let g:airline#extensions#tabline#buffer_min_count = 1
 nnoremap j gj
 nnoremap k gk
-"wow much colors in lisp wow
-let g:lisp_rainbow=1
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

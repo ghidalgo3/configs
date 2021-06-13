@@ -1,16 +1,25 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'cespare/vim-toml'
+Plugin 'nathanaelkane/vim-indent-guides'
+call vundle#end()
+
+" NERDTree configuration
 let g:NERDTreeNodeDelimiter = "\u00a0"
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
-call vundle#end()            " required
+
+" VIM Configutation
 filetype plugin indent on    " required
 syntax on
 set nowrap
@@ -19,6 +28,7 @@ set shiftwidth=4
 set softtabstop=4
 set smartindent
 set number
+set splitbelow
 let mapleader="\<Space>"
 filetype plugin on
 set grepprg=grep\ -nH\ $*
@@ -56,3 +66,6 @@ set backspace=indent,eol,start
 let g:airline#extensions#tabline#buffer_min_count = 1
 nnoremap j gj
 nnoremap k gk
+
+" Ctrl-W Ctrl-W to switch focus out of a terminal
+" CTRL-] to jump to a tag, CTRL-O to jump back

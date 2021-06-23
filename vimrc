@@ -6,13 +6,23 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
+Plugin 'dense-analysis/ale'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'cespare/vim-toml'
 Plugin 'nathanaelkane/vim-indent-guides'
+" Plugin 'vim-airline/vim-airline'
 call vundle#end()
+
+" OmniSharp
+let g:OmniSharp_server_stdio = 1
+let g:ale_linters = {
+\ 'cs': ['OmniSharp']
+\}
+
+" CtrlP Configuration
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " NERDTree configuration
 let g:NERDTreeNodeDelimiter = "\u00a0"
@@ -22,7 +32,7 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 " VIM Configutation
 filetype plugin indent on    " required
 syntax on
-set nowrap
+set wrap
 set relativenumber
 set shiftwidth=4
 set softtabstop=4
@@ -61,6 +71,9 @@ nnoremap <Leader>q :q<cr>
 nnoremap <Leader>t :NERDTreeToggle<cr>
 nnoremap <Leader>ma :! make<cr>
 au BufReadPost *.pde set syntax=cpp
+au BufReadPost *.props set syntax=xml
+au BufReadPost *.targets set syntax=xml
+
 " Strange backspace behavior...
 set backspace=indent,eol,start
 let g:airline#extensions#tabline#buffer_min_count = 1
